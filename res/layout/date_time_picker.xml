@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:id="@+id/LinearLayoutTimePick" android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+	<TimePicker android:id="@+id/TimePicker01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10dp"></TimePicker>
+	<LinearLayout android:layout_width="fill_parent" android:weightSum="3" android:orientation="vertical" android:id="@+id/LinearLayoutTimePickButtons" android:layout_height="fill_parent">
+		<Button android:layout_height="0dp" android:layout_weight="1" android:id="@+id/ButtonDay" android:text="@string/today" android:layout_width="fill_parent">
+		</Button>
+		<Button android:layout_height="0dp" android:layout_weight="1" android:id="@+id/ButtonArrDep" android:text="@string/departure" android:layout_width="fill_parent">
+		</Button>
+		<Button android:layout_height="0dp" android:layout_weight="1" android:id="@+id/ButtonGo" android:text="@string/go" android:layout_width="fill_parent">
+		</Button>
+	</LinearLayout>
+</LinearLayout>

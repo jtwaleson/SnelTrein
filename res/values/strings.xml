@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SnelTrein</string>
+    <string name="act_station_chooser_label">SnelTrein - Choose a station</string>
+    <string name="act_station_details_label">SnelTrein - Departures</string>
+    <string name="act_trip_details_label">SnelTrein - Journey</string>
+    <string name="my_stations">My stations</string>
+    <string name="my_trips">My trips</string>
+    <string name="station">Station</string>
+    <string name="trip">Trip</string>
+    <string name="trip_via">Trip (via)</string>
+    <string name="placeholder"></string>
+    <string name="more">more...</string>
+    <string name="go">Go</string>
+
+    <color name="transparent">#00000000</color>
+
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="dayaftertomorrow">The day after tomorrow</string>
+    <string name="no_information_currently">There is no information available</string>
+    <string name="failed_parsing_opening_site">Failed parsing the page, reverting to browser</string>
+    <string name="communicating_site">Connecting to webservices.ns.nl</string>
+    <string name="parsing_content">Parsing the page</string>
+    <string name="journey_is_cancelled">!!! This trip is cancelled !!!</string>
+    <string name="preferences">Preferences</string>
+    <string name="selecttime">Select time</string>
+    <string name="departure">Departure</string>
+    <string name="arrival">Arrival</string>
+    <string name="pickacolor">Actions</string>
+    <string name="planreturn">Find return</string>
+    <string name="removefromlist">Remove from list</string>
+    <string name="grey">Grey</string>
+    <string name="green">Green</string>
+    <string name="orange">Orange</string>
+    <string name="red">Red</string>
+    <string name="openbrowser">Open browser</string>
+    <string name="refresh">Refresh</string>
+    <string name="pickastation">Pick a station</string>
+    <string name="hasovcard">Annual/OV pass?</string>
+    <string name="hasovcardsummary">Faster detours will be searched for</string>
+    <string name="takehispeed">Include trains with supplement?</string>
+    <string name="takehispeedsummary">Additional tickets required (Fyra/ICE/Thalys..)</string>
+    <string name="reverttobrowser">Fall back to m.ns.nl?</string>
+    <string name="reverttobrowsersummary">Open browser when this app fails to recognize data</string>
+    <string name="whatsNewTitle">Welcome to SnelTrein</string>
+    <string name="whatsNewText">Your screen will be empty on the first run, but stations and trips you use often will later appear for quick access. Do not forget to set your preferences using the \'menu\' key.</string>
+    <string name="auto_load_nearest_departure_title">Start searching</string>
+    <string name="auto_load_nearest_departure_summary">Start searching with departure time = \'now\'</string>
+    <string name="trips_above_stations_in_main_title">Trips above stations</string>
+    <string name="trips_above_stations_in_main_summary">Show trips above stations in main window</string>
+    <string name="number_of_near_stations_title">Location</string>
+    <string name="number_of_near_stations_summary">Number of near stations to show</string>
+    <string name="number_of_fav_stations_title">Show ... stations</string>
+    <string name="number_of_fav_stations_summary">Number of stations in main window</string>
+    <string name="number_of_fav_trips_title">Show ... trips</string>
+    <string name="number_of_fav_trips_summary">Number of trips in main window</string>
+    <string name="sort_stations_by_hits_title">Sort stations by usage</string>
+    <string name="sort_stations_by_hits_summary">On: sort by usage\nOff: sort by name</string>
+    <string name="sort_trips_by_hits_title">Sort trips on usage</string>
+    <string name="sort_trips_by_hits_summary">On: sort by usage\nOff: sort by name of \'from\' station</string>
+    <string name="station_selected">Station selected</string>
+    <string name="from_station">From station...</string>
+    <string name="to_station">To station...</string>
+    <string name="via_station">Via station...</string>
+    <string name="station_dots">Station...</string>
+    <string name="report_bug">Send feedback</string>
+    <string name="emailsuggestion">SnelTrein bug/suggestion</string>
+    <string name="emailnotification">Send e-mail</string>
+    <string name="refresh_location">Update location</string>
+    <string name="location_updated">Location updated</string>
+    <string name="prices">Ticket price</string>
+    <string name="single_fare">Single fare</string>
+    <string name="return_ticket">Return</string>
+    <string name="reduction20">20%</string>
+    <string name="reduction40">40%</string>
+    <string name="first_class">1st</string>
+    <string name="second_class">2nd</string>
+    <string name="failed_loading_prices">Prices not retrieved. Server responded incorrectly.</string>
+    <string name="share">Share</string>
+    <string name="share_using">Share using</string>
+    <string name="no_journey_selected">No journey selected</string>
+    <string name="send_short">Short</string>
+    <string name="send_medium">Medium</string>
+    <string name="send_long">Long</string>
+    <string name="send_journey">Send journey transcript</string>
+    <string name="disruptions">Disruptions</string>
+    <string name="unplanned">Unplanned</string>
+    <string name="planned">Planned</string>
+    <string name="language">en</string>
+    <string name="a"></string>
+
+    <string-array name="one_to_twenty_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="zero_to_five_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" android:id="@+id/LinearLayout01"
+	android:layout_width="fill_parent" android:orientation="horizontal"
+	android:drawable="@drawable/selector" android:background="@drawable/selector"
+	android:focusable="true">
+	<TextView android:id="@+id/TVDepartureTime"
+		android:layout_alignParentLeft="true" android:paddingRight="30sp"
+		style="@style/Time"></TextView>
+	<TextView android:id="@+id/TVDepartureDate"
+		android:layout_alignRight="@+id/TVDepartureTime" android:paddingRight="10sp"
+		android:layout_below="@+id/TVDepartureTime" style="@style/ExtraItalic"></TextView>
+	<TextView android:id="@+id/TVDelay1" android:layout_alignLeft="@+id/TVDepartureTime"
+		android:layout_below="@+id/TVDepartureTime" style="@style/Delay"></TextView>
+
+	<TextView android:id="@+id/TVArrivalTime"
+		android:layout_toRightOf="@+id/TVDepartureTime" android:paddingRight="30sp"
+		style="@style/Time"></TextView>
+	<TextView android:id="@+id/TVArrivalDate"
+		android:layout_alignRight="@+id/TVArrivalTime" android:layout_below="@+id/TVArrivalTime"
+		style="@style/ExtraItalic"></TextView>
+	<TextView android:id="@+id/TVDelay2" android:layout_alignLeft="@+id/TVArrivalTime"
+		android:layout_below="@+id/TVArrivalTime" style="@style/Delay"></TextView>
+
+	<TextView android:id="@+id/TVTransfers"
+		android:layout_toRightOf="@+id/TVArrivalTime" style="@style/Time"
+		android:paddingRight="10sp" android:layout_width="75sp"></TextView>
+	<TextView android:id="@+id/TVLength"
+		android:layout_alignRight="@+id/TVTransfers" android:layout_below="@+id/TVTransfers"
+		style="@style/ExtraItalic"></TextView>
+	<ImageView android:id="@+id/IVCache"
+		android:layout_alignParentRight="true"
+		android:layout_width="22sp" android:layout_height="22sp"
+		android:layout_marginTop="10sp" />
+	<TextView android:id="@+id/TVExtraInfo" android:layout_below="@+id/TVArrivalDate"
+		android:layout_alignParentLeft="true" style="@style/ExtraItalic"></TextView>
+
+	<LinearLayout android:id="@+id/LLDetails"
+		android:layout_below="@+id/TVExtraInfo" android:paddingBottom="4sp"
+		android:layout_marginLeft="20sp" android:layout_marginTop="10sp"
+		android:layout_width="fill_parent" android:orientation="vertical"
+		android:layout_height="wrap_content"></LinearLayout>
+</RelativeLayout>

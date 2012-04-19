@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="wrap_content" android:id="@+id/RelativeLayout" android:layout_width="fill_parent" android:orientation="horizontal"
+android:drawable="@drawable/selector"
+android:background="@drawable/selector"
+android:clickable="true"
+android:focusable="true"
+>
+<TextView android:id="@+id/TVTime" android:layout_alignParentLeft="true" style="@style/Time"></TextView>
+<TextView android:id="@+id/TVDelay" android:layout_alignParentLeft="true" android:layout_below="@+id/TVTime" style="@style/Delay"></TextView>
+<TextView android:id="@+id/TVStation" android:layout_toRightOf="@+id/TVTime" android:layout_toLeftOf="@+id/TVTrack" android:layout_alignTop="@+id/TVTime" style="@style/Station"></TextView>
+
+<TextView android:id="@+id/TVExtra1" style="@style/ExtraItalic" android:layout_alignLeft="@+id/TVStation" android:layout_alignRight="@+id/TVStation" android:layout_below="@+id/TVExtra2"></TextView>
+<TextView android:id="@+id/TVExtra2" style="@style/Extra" android:layout_alignLeft="@+id/TVStation" android:layout_alignRight="@+id/TVStation" android:layout_below="@+id/TVStation"></TextView>
+
+<TextView android:id="@+id/TVTrack" style="@style/Track" android:layout_width="wrap_content" android:layout_alignParentRight="true"></TextView>
+</RelativeLayout>

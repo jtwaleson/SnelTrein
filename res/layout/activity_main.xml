@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:id="@+id/ScrollView01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/LinearLayout01" android:layout_height="fill_parent" android:orientation="vertical" android:layout_width="fill_parent">
+		<LinearLayout android:id="@+id/LinearLayoutMainButtons" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="4">
+			<Button android:text="@string/station" android:layout_height="wrap_content" android:id="@+id/ButtonStation" android:width="0dp" android:layout_width="0dp" android:layout_weight="1"></Button>
+			<Button android:text="@string/trip_via" android:layout_height="wrap_content" android:id="@+id/ButtonTripVia" android:width="0dp" android:layout_width="0dp" android:layout_weight="1"></Button>
+			<Button android:text="@string/trip" android:layout_height="wrap_content" android:id="@+id/ButtonTrip" android:width="0dp" android:layout_width="0dp" android:layout_weight="2"></Button>
+		</LinearLayout>
+		<TextView android:text="@string/my_trips" android:id="@+id/TextViewMyTrips" style="@style/TopText"></TextView>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/LinearLayoutTrips" android:layout_height="fill_parent" android:orientation="vertical" android:layout_width="fill_parent">
+		</LinearLayout>
+		<TextView android:text="@string/my_stations" android:id="@+id/TextViewMyStations" style="@style/TopText">
+		</TextView>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/LinearLayoutStations" android:layout_height="fill_parent" android:orientation="vertical" android:layout_width="fill_parent">
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>

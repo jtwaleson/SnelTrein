@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_button_preferences"
+          android:icon="@drawable/ic_menu_preferences"
+          android:title="@string/preferences" />
+    <item android:id="@+id/menu_report_bug"
+          android:icon="@drawable/ic_menu_end_conversation"
+          android:title="@string/report_bug" />          
+    <item android:id="@+id/menu_refresh_position"
+          android:icon="@drawable/ic_menu_mylocation"
+          android:title="@string/refresh_location" />          
+    <item android:id="@+id/menu_disruptions"
+          android:icon="@drawable/ic_menu_notifications"
+          android:title="@string/disruptions" />          
+</menu>

@@ -1,0 +1,17 @@
+<RelativeLayout android:layout_width="fill_parent" android:orientation="vertical" android:id="@+id/LinearLayoutStationDepartures" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+     <ProgressBar
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         style="@android:style/Widget.ProgressBar"
+         android:layout_marginRight="5dp"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentRight="true"
+         android:id="@+id/ImageViewLoading2"
+         />	
+	<Button android:layout_height="wrap_content" android:id="@+id/ButtonSelectTime" android:layout_width="fill_parent" android:text="@string/selecttime" android:layout_alignParentTop="true" android:layout_toLeftOf="@+id/ImageViewLoading2"></Button>
+	<ScrollView android:id="@+id/ScrollView01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@+id/ButtonMore" android:layout_below="@+id/ButtonSelectTime">
+			<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:id="@+id/LinearLayoutOther" android:paddingBottom="20sp" android:layout_height="fill_parent"></LinearLayout>
+	</ScrollView>
+	<Button android:text="@string/more" android:id="@+id/ButtonMore" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_alignParentBottom="true"></Button>	
+</RelativeLayout>

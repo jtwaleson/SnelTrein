@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_button_openbrowser"
+          android:icon="@drawable/ic_menu_directions"
+          android:title="@string/openbrowser" />
+	<item android:id="@+id/menu_button_refresh"
+          android:icon="@drawable/ic_menu_refresh"
+          android:title="@string/refresh" />
+	<item android:id="@+id/menu_button_prices"
+          android:icon="@drawable/ic_menu_agenda"
+          android:title="@string/prices" />
+	<item android:id="@+id/menu_button_share"
+          android:icon="@drawable/ic_menu_send"
+          android:title="@string/share" />	
+</menu>

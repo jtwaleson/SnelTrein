@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" android:id="@+id/LinearLayout01"
+	android:layout_width="fill_parent" android:orientation="horizontal"
+	android:drawable="@drawable/selector" android:background="@drawable/selector"
+	android:focusable="true">
+	<ImageView 
+	    android:src="@drawable/arrow_down_float"
+	    android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4sp"
+        android:layout_marginTop="8sp"
+        android:id="@+id/IVExpand"
+ 	    />
+	<TextView android:id="@+id/TVTitle"
+		android:layout_toRightOf="@+id/IVExpand"
+		style="@style/Time"></TextView>
+	<TextView android:id="@+id/TVDescription1"
+		android:layout_alignParentLeft="true" android:paddingLeft="10sp"
+		android:layout_below="@+id/TVTitle" style="@style/Extra"></TextView>
+	<TextView android:id="@+id/TVDescription2"
+		android:layout_alignParentLeft="true" android:paddingLeft="10sp"
+		android:layout_below="@+id/TVDescription1" style="@style/ExtraItalic"></TextView>
+	<TextView android:id="@+id/TVDescription3"
+		android:layout_alignParentLeft="true" android:paddingLeft="10sp"
+		android:layout_below="@+id/TVDescription2" style="@style/Extra" android:textSize="15sp"
+		android:drawable="@drawable/selector"
+		android:background="@drawable/selector2"
+		android:textColor="#000000"
+		></TextView>
+</RelativeLayout>

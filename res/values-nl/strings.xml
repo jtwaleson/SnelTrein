@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SnelTrein</string>
+    <string name="act_station_chooser_label">SnelTrein - Kies een station</string>
+    <string name="act_station_details_label">SnelTrein - Actuele vertrektijden</string>
+    <string name="act_trip_details_label">SnelTrein - Reis</string>
+    <string name="my_stations">Mijn stations</string>
+    <string name="my_trips">Mijn reizen</string>
+    <string name="station">Station</string>
+    <string name="trip">Reis</string>
+    <string name="trip_via">Reis(via)</string>
+    <string name="placeholder"></string>
+
+    <string name="more">meer...</string>
+    <string name="go">Go</string>
+    <color name="transparent">#00000000 </color>
+    <string name="today">Vandaag</string>
+    <string name="tomorrow">Morgen</string>
+    <string name="dayaftertomorrow">Overmorgen</string>
+    <string name="no_information_currently">Er is geen reisinformatie beschikbaar</string>
+    <string name="failed_parsing_opening_site">De pagina is niet herkend, ik val terug op de browser</string>
+    <string name="communicating_site">Verbinden met webservices.ns.nl</string>
+	<string name="parsing_content">Pagina inlezen</string>
+    <string name="journey_is_cancelled">!!! Dit advies vervalt !!!</string>
+    <string name="selecttime">Kies tijd</string>
+    <string name="preferences">Voorkeuren</string>
+    <string name="departure">Vertrek</string>
+    <string name="arrival">Aankomst</string>
+    <string name="pickacolor">Acties</string>
+    <string name="planreturn">Zoek terugreis</string>
+    <string name="removefromlist">Verwijder uit de lijst</string>
+    <string name="openbrowser">Open browser</string>
+    <string name="refresh">Vernieuw</string>
+    <string name="pickastation">Kies een station</string>
+    
+   	<string name="grey">Grijs</string>
+   	<string name="green">Groen</string>
+   	<string name="orange">Oranje</string>
+   	<string name="red">Rood</string>
+   	
+   	<string name="hasovcard">Jaarkaart / studenten-OV?</string>
+   	<string name="hasovcardsummary">Neem snellere omleidingen indien beschikbaar</string>
+   	<string name="takehispeed">Treinen met toeslag?</string>
+   	<string name="takehispeedsummary">Fyra/ICE/Thalys</string>   	
+   	
+   	<string name="whatsNewTitle">Welkom bij SnelTrein</string>   	
+   	<string name="whatsNewText">Uw scherm is nu nog leeg, maar elke reis en elk station dat u opzoekt wordt opgeslagen zodat u het de volgende keer direct kunt gebruiken. Vergeet niet uw instellingen aan te passen (via de \'Menu\' toets).</string>
+   	
+   	
+    
+    
+    <string name="auto_load_nearest_departure_title">Zoek direct</string>
+	<string name="auto_load_nearest_departure_summary">Zoek gelijk met vertrektijd = \'nu\'</string>
+    <string name="trips_above_stations_in_main_summary">Toon reizen boven stations in hoofdscherm</string>
+    <string name="trips_above_stations_in_main_title">Reizen boven stations</string>
+
+    <string name="number_of_near_stations_title">Locatie</string>
+	<string name="number_of_near_stations_summary">Toon ... stations in de buurt</string>
+    
+	<string name="number_of_fav_stations_title">Onthoud ... stations</string>
+	<string name="number_of_fav_stations_summary">Aantal favoriete stations</string>
+	<string name="number_of_fav_trips_title">Onthoud ... reizen</string>
+	<string name="number_of_fav_trips_summary">Aantal favoriete reizen</string>
+
+   	<string name="reverttobrowser">Val terug op m.ns.nl?</string>
+   	<string name="reverttobrowsersummary">Open browser als deze app faalt</string>   	
+
+	<string name="sort_stations_by_hits_title">Sorteer stations op gebruik</string>
+	<string name="sort_stations_by_hits_summary">Sorteer op het aantal reizen van/naar de stations; anders op de naam van het station</string>
+	<string name="sort_trips_by_hits_title">Sorteer reizen op gebruik</string>
+	<string name="sort_trips_by_hits_summary">Sorteer op het aantal keer dat de reis gemaakt is; anders op de naam van het vertrekkende station</string>
+	<string name="station_selected">Station gekozen</string>
+	<string name="from_station">Van station...</string>
+	<string name="to_station">Naar station...</string>
+	<string name="via_station">Via station...</string>
+	<string name="station_dots">Station...</string>
+	<string name="refresh_location">Update locatie</string>
+	<string name="location_updated">Locatie bepaald</string>
+	<string name="prices">Prijzen</string>
+	
+	<string name="single_fare">Enkele reis</string>
+	<string name="return_ticket">Dagretour</string>
+	<string name="reduction20">20%</string>
+	<string name="reduction40">40%</string>
+	<string name="first_class">1e</string>
+	<string name="second_class">2e</string>
+	<string name="failed_loading_prices">Prijzen kunnen niet opgehaald worden</string>
+	
+	<string name="a"></string>
+	<string name="share">Deel</string>
+	<string name="share_using">Deel via</string>
+	<string name="no_journey_selected">Geen reis gekozen</string>
+	
+	<string name="send_short">Kort</string>
+	<string name="send_medium">Normaal</string>
+	<string name="send_long">Lang</string>
+	<string name="send_journey">Stuur reisoverzicht</string>	    
+	<string name="disruptions">Storingen</string>
+	    	
+	<string name="emailsuggestion">SnelTrein bug/suggestie</string>
+	<string name="emailnotification">Stuur e-mail</string>
+	
+	<string name="unplanned">Ongepland</string>
+	<string name="planned">Gepland</string>
+	
+	<string name="language">nl</string>	    	
+	
+
+	<string name="report_bug">Stuur feedback</string>
+	<string-array name="one_to_twenty_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+		<item>11</item>
+		<item>12</item>
+		<item>13</item>
+		<item>14</item>
+		<item>15</item>
+		<item>16</item>
+		<item>17</item>
+		<item>18</item>
+		<item>19</item>
+		<item>20</item>
+	</string-array>
+	<string-array name="zero_to_five_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>		
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+		<CheckBoxPreference
+		        android:title="@string/auto_load_nearest_departure_title"
+		        android:defaultValue="true"
+		        android:summary="@string/auto_load_nearest_departure_summary"
+		        android:key="auto_load_nearest_departure" />
+		<CheckBoxPreference
+		        android:title="@string/trips_above_stations_in_main_title"
+		        android:defaultValue="true"
+		        android:summary="@string/trips_above_stations_in_main_summary"
+		        android:key="trips_above_stations_in_main" />
+		<CheckBoxPreference
+		        android:title="@string/sort_stations_by_hits_title"
+		        android:defaultValue="false"
+		        android:summary="@string/sort_stations_by_hits_summary"
+		        android:key="sort_stations_by_hits" />
+        <ListPreference
+                android:name="List Preference"
+                android:summary="@string/number_of_near_stations_summary"
+                android:defaultValue="3"
+                android:title="@string/number_of_near_stations_title"
+                android:key="number_of_near_stations"
+				android:entries="@array/zero_to_five_values"
+				android:entryValues="@array/zero_to_five_values" />
+        <ListPreference
+                android:name="List Preference"
+                android:summary="@string/number_of_fav_stations_summary"
+                android:defaultValue="10"
+                android:title="@string/number_of_fav_stations_title"
+                android:key="number_of_fav_stations"
+				android:entries="@array/one_to_twenty_values"
+				android:entryValues="@array/one_to_twenty_values" />
+		<CheckBoxPreference
+		        android:title="@string/sort_trips_by_hits_title"
+		        android:defaultValue="true"
+		        android:summary="@string/sort_trips_by_hits_summary"
+		        android:key="sort_trips_by_hits" />
+		<ListPreference
+                android:name="List Preference"
+                android:summary="@string/number_of_fav_trips_summary"
+                android:defaultValue="10"
+                android:title="@string/number_of_fav_trips_title"
+                android:key="number_of_fav_trips"
+				android:entries="@array/one_to_twenty_values"
+				android:entryValues="@array/one_to_twenty_values" />
+		<CheckBoxPreference
+		        android:title="@string/hasovcard"
+		        android:defaultValue="false"
+		        android:summary="@string/hasovcardsummary"
+		        android:key="has_ov_card" />
+		<CheckBoxPreference
+		        android:title="@string/takehispeed"
+		        android:defaultValue="false"
+		        android:summary="@string/takehispeedsummary"
+		        android:key="take_hispeed_trains" />		        				                
+		<CheckBoxPreference
+		        android:title="@string/reverttobrowser"
+		        android:defaultValue="true"
+		        android:summary="@string/reverttobrowsersummary"
+		        android:key="revert_to_browser" />		        				                
+</PreferenceScreen>

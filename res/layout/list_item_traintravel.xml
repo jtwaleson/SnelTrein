@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="wrap_content" android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:orientation="horizontal"
+android:drawable="@drawable/selector"
+android:background="@drawable/selector2"
+android:focusable="true"
+android:paddingLeft="10sp"
+>
+<TextView android:id="@+id/TVTimeA" android:textColor="#000000" android:layout_alignParentLeft="true" style="@style/Time"></TextView>
+<TextView android:id="@+id/TVStationA" android:textColor="#000000" android:layout_toRightOf="@+id/TVTimeA" android:textStyle="normal" android:layout_alignTop="@+id/TVTimeA" style="@style/Station"></TextView>
+<TextView android:id="@+id/TVTrackA" style="@style/TrackSmall" android:layout_alignParentRight="true"></TextView>
+<TextView android:id="@+id/TVDelay1" android:layout_below="@+id/TVTimeA" android:layout_alignLeft="@+id/TVTimeA" style="@style/Delay"></TextView>
+
+
+<TextView android:id="@+id/TVExtra1" android:textColor="#000000" android:layout_below="@+id/TVStationA" android:layout_alignLeft="@+id/TVStationA" style="@style/Extra"></TextView>
+
+<TextView android:id="@+id/TVViaStations" android:textColor="#000000" android:layout_below="@+id/TVExtra1" android:layout_alignLeft="@+id/TVStationA" style="@style/ExtraItalic"></TextView>
+
+<TextView android:id="@+id/TVTimeB" android:textColor="#000000" android:layout_below="@+id/TVViaStations" android:layout_alignParentLeft="true" style="@style/Time"></TextView>
+<TextView android:id="@+id/TVDelay2" android:layout_below="@+id/TVTimeB" android:layout_alignLeft="@+id/TVTimeB" style="@style/Delay"></TextView>
+<TextView android:id="@+id/TVStationB" android:textColor="#000000" android:textStyle="normal" android:layout_toRightOf="@+id/TVTimeB" android:layout_alignTop="@+id/TVTimeB" style="@style/Station"></TextView>
+<TextView android:id="@+id/TVTrackB" android:layout_alignTop="@+id/TVTimeB" style="@style/TrackSmall" android:layout_alignParentRight="true"></TextView>
+
+</RelativeLayout>

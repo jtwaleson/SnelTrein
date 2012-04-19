@@ -1,0 +1,14 @@
+
+
+<LinearLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical">
+
+	<TextView android:id="@+id/TextViewStationSelectorStationName" style="@style/TopText" android:layout_height="wrap_content" ></TextView>
+	
+	<AutoCompleteTextView android:id="@+id/AutoCompleteTextViewStationSelector" android:text="@+id/AutoCompleteTextView01" android:layout_height="wrap_content" android:layout_width="fill_parent"></AutoCompleteTextView>
+	
+	<ScrollView android:id="@+id/ScrollView" android:layout_width="fill_parent" android:layout_height="fill_parent">
+		<LinearLayout android:id="@+id/LinearLayoutStations" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical"></LinearLayout>
+	</ScrollView>
+
+
+</LinearLayout>
