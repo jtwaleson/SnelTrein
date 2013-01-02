@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="auto"
-    package="com.waleson.sneltrein"
+    package="eu.waleson.sneltrein"
     android:versionCode="26"
     android:versionName="3.0" >
 
@@ -9,12 +9,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:name="com.waleson.sneltrein.STApplication"
+        android:name="eu.waleson.sneltrein.STApplication"
         android:debuggable="false"
         android:icon="@drawable/icon"
         android:label="SnelTrein" >
         <activity
-            android:name="com.waleson.sneltrein.activities.SnelTrein"
+            android:name="eu.waleson.sneltrein.activities.SnelTrein"
             android:configChanges="orientation|keyboardHidden"
             android:label="SnelTrein" >
             <intent-filter>
@@ -24,25 +24,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.waleson.sneltrein.activities.Preferences"
+            android:name="eu.waleson.sneltrein.activities.Preferences"
             android:label="@string/preferences" >
         </activity>
         <activity
-            android:name="com.waleson.sneltrein.activities.Disruptions"
+            android:name="eu.waleson.sneltrein.activities.Disruptions"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/disruptions" >
         </activity>
         <activity
-            android:name="com.waleson.sneltrein.activities.StationSelector"
+            android:name="eu.waleson.sneltrein.activities.StationSelector"
             android:label="@string/act_station_chooser_label" >
         </activity>
         <activity
-            android:name="com.waleson.sneltrein.activities.JourneySelector"
+            android:name="eu.waleson.sneltrein.activities.JourneySelector"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/act_trip_details_label" >
         </activity>
         <activity
-            android:name="com.waleson.sneltrein.activities.StationDepartures"
+            android:name="eu.waleson.sneltrein.activities.StationDepartures"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/act_station_details_label" >
         </activity>
