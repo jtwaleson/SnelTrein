@@ -70,6 +70,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 					.setMessage(whatsNewText)
 					.setPositiveButton("Ok",
 							new DialogInterface.OnClickListener() {
+								@Override
 								public void onClick(DialogInterface dialog,
 										int which) {
 									dialog.dismiss();
@@ -78,6 +79,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 		}
 	}
 
+	@Override
 	public void onClick(View v) {
 		if (v == findViewById(R.id.ButtonStation)) {
 			OpenGetTripOrStation(1);
@@ -225,6 +227,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 		startActivity(i);
 	}
 
+	@Override
 	public boolean onLongClick(View v) {
 		final CharSequence[] items = { getString(R.string.removefromlist),
 				getString(R.string.planreturn), getString(R.string.grey),
@@ -235,6 +238,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 		builder.setTitle(R.string.pickacolor);
 		final TripPlan tp = ((TripPlan) v.getTag());
 		builder.setItems(items, new DialogInterface.OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int item) {
 				if (item >= itemsbeforecolors) {
 					tp.userColor = item - itemsbeforecolors;
@@ -256,6 +260,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 		return true;
 	}
 
+	@Override
 	public void processLocation() {
 		llaStations.refresh(app.myStationsAndNearStations, getLayoutInflater());
 		if (locationForced) {

@@ -22,6 +22,7 @@ public class Station implements IViewable, Comparable<Station> {
 		code = aCode;
 		name = aName;
 	}
+	@Override
 	public View getView(LayoutInflater inflater, int number) {
 		if (number == 1)
 			return getView1(inflater);
@@ -44,6 +45,7 @@ public class Station implements IViewable, Comparable<Station> {
 		updateView(inflater,view,2);
 		return view;				
 	}
+	@Override
 	public void updateView(LayoutInflater inflater, View view, int number) {
 		((TextView)view.findViewById(R.id.TVName)).setText(name);
 		if (hits > 0)
@@ -92,6 +94,7 @@ public class Station implements IViewable, Comparable<Station> {
 	public String toString() {
 		return name;
 	}
+	@Override
 	public int compareTo(Station another) {
 		if (special == 1)
 			return (distance > another.distance ? 1 : (distance < another.distance ? -1 : 0));

@@ -75,12 +75,14 @@ public class Journey implements IViewable, Comparable<Journey> {
 
 	}
 
+	@Override
 	public View getView(LayoutInflater inflater, int number) {
 		View view = inflater.inflate(R.layout.list_item_journeysummary, null);
 		updateView(inflater, view, number);
 		return view;
 	}
 
+	@Override
 	public void updateView(LayoutInflater inflater, View view, int number) {
 		((TextView) view.findViewById(R.id.TVDepartureDate))
 				.setText(plannedDeparture.getDayMonth());
@@ -132,6 +134,7 @@ public class Journey implements IViewable, Comparable<Journey> {
 		view.setTag(this);
 	}
 
+	@Override
 	public int compareTo(Journey another) {
 		int res = this.plannedDeparture.compareTo(another.plannedDeparture);
 		if (res == 0)

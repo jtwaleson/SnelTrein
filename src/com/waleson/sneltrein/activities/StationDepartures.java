@@ -125,6 +125,7 @@ public class StationDepartures extends Activity implements OnClickListener {
 		}
 	}
 
+	@Override
 	public void onClick(View v) {
 		TrainTravel orig = (TrainTravel) v.getTag();
 		String stationName = orig.trainstopB.station.name;
@@ -157,6 +158,7 @@ public class StationDepartures extends Activity implements OnClickListener {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle(R.string.pickastation);
 		builder.setItems(items, new DialogInterface.OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int item) {
 				openTripPlan(tt1, items[item].toString());
 			}

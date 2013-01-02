@@ -85,16 +85,20 @@ public class STApplication extends Application implements
 			locationManager.requestLocationUpdates(
 					LocationManager.NETWORK_PROVIDER, 50000, 500,
 					new LocationListener() {
+						@Override
 						public void onStatusChanged(String provider,
 								int status, Bundle extras) {
 						}
 
+						@Override
 						public void onProviderEnabled(String provider) {
 						}
 
+						@Override
 						public void onProviderDisabled(String provider) {
 						}
 
+						@Override
 						public void onLocationChanged(Location location) {
 							locationManager.removeUpdates(this);
 							registerLocation(location);
@@ -138,6 +142,7 @@ public class STApplication extends Application implements
 		myTrips = database.getTrips(numberOfTrips, sortTripsByUsage);
 	}
 
+	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
 		loadFromPreferences();

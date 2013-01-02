@@ -143,6 +143,7 @@ public class CDate implements Comparable<CDate> {
 		return hour == other.hour && minute == other.minute;
 	}
 
+	@Override
 	public int compareTo(CDate that) {
 		// TODO Auto-generated method stub
 		if (this.year != that.year)

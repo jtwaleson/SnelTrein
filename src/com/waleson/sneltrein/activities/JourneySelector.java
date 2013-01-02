@@ -125,6 +125,7 @@ public class JourneySelector extends Activity implements OnClickListener {
 		journeys = app.database.getJourneys(lastTripPlan, lastDate);
 	}
 
+	@Override
 	public void onClick(View v) {
 		if (v == findViewById(R.id.ButtonSelectTime)) {
 			showDateTimeDialog();
@@ -176,6 +177,7 @@ public class JourneySelector extends Activity implements OnClickListener {
 			dialog2.setTitle(R.string.selecttime);
 			dialog2.setCancelable(true);
 			dialog2.setOnDismissListener(new OnDismissListener() {
+				@Override
 				public void onDismiss(DialogInterface dialog) {
 					dialogCurrentlyOpen = false;
 				}
@@ -190,6 +192,7 @@ public class JourneySelector extends Activity implements OnClickListener {
 
 			((Button) dialog2.findViewById(R.id.ButtonGo))
 					.setOnClickListener(new OnClickListener() {
+						@Override
 						public void onClick(View v) {
 							CDate d = CDate.now();
 							d.addDays(daysPlus);
@@ -211,6 +214,7 @@ public class JourneySelector extends Activity implements OnClickListener {
 					});
 			((Button) dialog2.findViewById(R.id.ButtonArrDep))
 					.setOnClickListener(new OnClickListener() {
+						@Override
 						public void onClick(View v) {
 							app.departureOrArrival = !app.departureOrArrival;
 							((Button) dialog2.findViewById(R.id.ButtonArrDep))
@@ -220,6 +224,7 @@ public class JourneySelector extends Activity implements OnClickListener {
 					});
 			((Button) dialog2.findViewById(R.id.ButtonDay))
 					.setOnClickListener(new OnClickListener() {
+						@Override
 						public void onClick(View v) {
 							daysPlus += 1;
 							daysPlus = daysPlus % 3;
@@ -327,6 +332,7 @@ public class JourneySelector extends Activity implements OnClickListener {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle(R.string.send_journey);
 				builder.setItems(items, new DialogInterface.OnClickListener() {
+					@Override
 					public void onClick(DialogInterface dialog, int item) {
 						Intent sharingIntent = new Intent(Intent.ACTION_SEND);
 						sharingIntent.setType("text/*");
@@ -371,6 +377,7 @@ public class JourneySelector extends Activity implements OnClickListener {
 			if (scrollDown)
 				((ScrollView) findViewById(R.id.ScrollView01))
 						.post(new Runnable() {
+							@Override
 							public void run() {
 								((ScrollView) findViewById(R.id.ScrollView01))
 										.fullScroll(View.FOCUS_DOWN);

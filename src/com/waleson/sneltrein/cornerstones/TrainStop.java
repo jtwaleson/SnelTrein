@@ -40,12 +40,14 @@ public class TrainStop implements IViewable {
 		this.station = station;
 	}
 
+	@Override
 	public View getView(LayoutInflater inflater, int number) {
 		View v = inflater.inflate(R.layout.list_item_track, null);
 		updateView(inflater, v, number);
 		return v;
 	}
 
+	@Override
 	public void updateView(LayoutInflater inflater, View view, int number) {
 		TextView tv;
 		tv = (TextView) view.findViewById(R.id.TVTime);

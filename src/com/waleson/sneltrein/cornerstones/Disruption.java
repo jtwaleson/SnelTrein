@@ -22,12 +22,14 @@ public class Disruption implements IViewable {
 		this.planned = planned;
 	}
 
+	@Override
 	public View getView(LayoutInflater inflater, int number) {
 		View view = inflater.inflate(R.layout.list_item_disruption, null);
 		updateView(inflater, view, 1);
 		return view;
 	}
 
+	@Override
 	public void updateView(LayoutInflater inflater, View view, int number) {
 		// s += bericht;
 		((TextView) view.findViewById(R.id.TVTitle)).setText(traject);

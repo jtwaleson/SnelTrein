@@ -40,6 +40,7 @@ public abstract class ASyncNSDownloader extends
 		this.handler = handler;
 		if (dialog != null) {
 			dialog.setOnCancelListener(new OnCancelListener() {
+				@Override
 				public void onCancel(DialogInterface dialog) {
 					cancel(true);
 				}
@@ -117,6 +118,7 @@ public abstract class ASyncNSDownloader extends
 			alertbox.setMessage(R.string.no_information_currently);
 			alertbox.setNeutralButton("Ok",
 					new DialogInterface.OnClickListener() {
+						@Override
 						public void onClick(DialogInterface arg0, int arg1) {
 							dialog.getOwnerActivity().finish();
 						}

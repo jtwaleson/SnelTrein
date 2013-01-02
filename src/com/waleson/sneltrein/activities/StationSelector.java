@@ -269,6 +269,7 @@ public class StationSelector extends Activity implements OnClickListener,
 			this.id = id;
 		}
 
+		@Override
 		public String toString() {
 			return stationNames[id];
 		}
@@ -362,10 +363,12 @@ public class StationSelector extends Activity implements OnClickListener,
 		refreshStations();
 	}
 
+	@Override
 	public void onClick(View v) {
 		AddStation((Station) v.getTag());
 	}
 
+	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		AddStation(((StationID) parent.getItemAtPosition(position))
@@ -403,6 +406,7 @@ public class StationSelector extends Activity implements OnClickListener,
 		}
 	}
 
+	@Override
 	public void processLocation() {
 		refreshStations();
 		if (locationForced) {

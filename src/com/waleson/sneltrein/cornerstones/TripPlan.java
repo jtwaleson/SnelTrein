@@ -128,6 +128,7 @@ public class TripPlan implements IViewable, Comparable<TripPlan> {
 		return stationFrom.name + "\n  > " + stationTo.name;
 	}
 
+	@Override
 	public View getView(LayoutInflater inflater, int number) {
 		LinearLayout view = (LinearLayout) inflater.inflate(
 				R.layout.list_item_trip, null);
@@ -135,6 +136,7 @@ public class TripPlan implements IViewable, Comparable<TripPlan> {
 		return view;
 	}
 
+	@Override
 	public void updateView(LayoutInflater inflater, View v, int number) {
 		v.setTag(this);
 		TextView tv = (TextView) v.findViewById(R.id.TextViewTrip);
@@ -173,6 +175,7 @@ public class TripPlan implements IViewable, Comparable<TripPlan> {
 		return new Station[] { stationFrom, stationTo };
 	}
 
+	@Override
 	public int compareTo(TripPlan another) {
 		return stationFrom.compareTo(another.stationFrom);
 	}

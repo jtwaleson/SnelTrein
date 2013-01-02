@@ -60,6 +60,7 @@ public class TrainTravel implements IViewable {
 		}
 	}
 
+	@Override
 	public View getView(LayoutInflater inflater, int number) {
 		RelativeLayout view = (RelativeLayout) inflater.inflate(
 				R.layout.list_item_traintravel, null);
@@ -67,6 +68,7 @@ public class TrainTravel implements IViewable {
 		return view;
 	}
 
+	@Override
 	public void updateView(LayoutInflater inflater, View view, int number) {
 		RelativeLayout v = (RelativeLayout) view;
 		((TextView) v.findViewById(R.id.TVTimeA)).setText(trainstopA.date
