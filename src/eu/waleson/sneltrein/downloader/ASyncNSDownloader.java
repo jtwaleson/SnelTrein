@@ -69,7 +69,7 @@ public abstract class ASyncNSDownloader extends
 			
 			String basicAuth = "Basic "
 					+ new String(new Base64().encode(userpass.getBytes()));
-			uc.setRequestProperty("User-agent", "my agent name");
+			uc.setRequestProperty("User-agent", "SnelTrein 3.0");
 			uc.setRequestProperty("Authorization", basicAuth);
 			if (!failed) {
 				publishProgress(0);
