@@ -142,6 +142,9 @@ public class STApplication extends Application implements
 	public void refreshTrips() {
 		myTrips = database.getTrips(numberOfTrips, sortTripsByUsage);
 	}
+	public void refreshStations() {
+		database.refreshStations(sortStationsByUsage);
+	}
 
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,

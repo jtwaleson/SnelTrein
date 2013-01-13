@@ -87,7 +87,6 @@ public class LinearLayoutAdapter<T extends IViewable> {
 				}
 			}
 			layout.addView(v);
-
 		}
 		for (int i = layout.getChildCount() - 1; i >= list.size(); i--) {
 			layout.removeViewAt(i);

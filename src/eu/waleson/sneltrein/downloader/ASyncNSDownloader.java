@@ -62,7 +62,7 @@ public abstract class ASyncNSDownloader extends
 			URLConnection uc = lurl.openConnection();
 			uc.setConnectTimeout(60000);
 			uc.setReadTimeout(60000);
-			String userpass = "EMAIL:API_KEY";
+			String userpass = "hendrikpderuijter@gmail.com:Ob8VIC0jB6zA5-toEIMv_L-gLlhBNHexP4btDhA9ynlX0Uu__jK1EA";
 			if ("EMAIL:API_KEY".equals(userpass)) {
 				throw new Exception("Hey man, you need to fill in your key here!");
 			}

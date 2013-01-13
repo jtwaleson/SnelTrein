@@ -117,7 +117,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 			((LinearLayout) findViewById(stationLinearLayout)).removeAllViews();
 			((LinearLayout) findViewById(tripLinearLayout)).removeAllViews();
 			llaStations = new LinearLayoutAdapter<Station>(
-					(LinearLayout) findViewById(stationLinearLayout), this);
+					(LinearLayout) findViewById(stationLinearLayout), this, this);
 			llaTrips = new LinearLayoutAdapter<TripPlan>(
 					(LinearLayout) findViewById(tripLinearLayout), this, this);
 			app.settingsChanged = false;
@@ -177,12 +177,12 @@ public class SnelTrein extends Activity implements OnClickListener,
 				Bundle b = data.getExtras();
 				if (b.getInt("Count") == 1) {
 					Station s = new Station(b, 1);
-					app.database.AddStationHit(s);
+					app.database.addStationHit(s);
 					app.database.refreshStations(app.sortStationsByUsage);
 					OpenStationDepartures(s);
 				} else if (b.getInt("Count") == 2 || b.getInt("Count") == 3) {
 					TripPlan tp = TripPlan.fromResultBundle(b);
-					app.database.AddTripHit(tp);
+					app.database.addTripHit(tp);
 					app.refreshTrips();
 					OpenJourneySelector(tp);
 				}
@@ -206,7 +206,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 
 	public void OpenStationDepartures(Station s) {
 		Intent i = new Intent(this, StationDepartures.class);
-		app.database.AddStationHit(s);
+		app.database.addStationHit(s);
 		i.putExtras(s.getBundle());
 		startActivityForResult(i, GET_A_TRIPPLAN);
 	}
@@ -217,7 +217,7 @@ public class SnelTrein extends Activity implements OnClickListener,
 	}
 
 	public void OpenJourneySelector(TripPlan t) {
-		app.database.AddTripHit(t);
+		app.database.addTripHit(t);
 		Intent i = new Intent(this, JourneySelector.class);
 		i.putExtras(t.getBundle());
 		startActivity(i);
@@ -225,34 +225,55 @@ public class SnelTrein extends Activity implements OnClickListener,
 
 	@Override
 	public boolean onLongClick(View v) {
-		final CharSequence[] items = { getString(R.string.removefromlist),
-				getString(R.string.planreturn), getString(R.string.grey),
-				getString(R.string.green), getString(R.string.red),
-				getString(R.string.orange) };
-		final int itemsbeforecolors = 2;
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(R.string.pickacolor);
-		final TripPlan tp = ((TripPlan) v.getTag());
-		builder.setItems(items, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int item) {
-				if (item >= itemsbeforecolors) {
-					tp.userColor = item - itemsbeforecolors;
-					app.database.UpdateColor(tp);
-					refreshView(false);
-				}
-				if (item == 0) {
-					app.database.Remove(tp);
-					app.refreshTrips();
-					refreshView(true);
-				}
-				if (item == 1) {
-					OpenJourneySelector(tp.getReverse());
-				}
+		if (v.getTag() != null) {
+			if (v.getTag() instanceof Station) {
+				final CharSequence[] items = { getString(R.string.removefromlist) };
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setTitle(R.string.pickacolor);
+				final Station s = ((Station) v.getTag());
+				builder.setItems(items, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int item) {
+						if (item == 0) {
+							app.database.removeStation(s);
+							app.refreshStations();
+							refreshView(true);
+						}
+					}
+				});
+				AlertDialog alert = builder.create();
+				alert.show();
+			} else if (v.getTag() instanceof TripPlan) {
+				final CharSequence[] items = { getString(R.string.removefromlist),
+						getString(R.string.planreturn), getString(R.string.grey),
+						getString(R.string.green), getString(R.string.red),
+						getString(R.string.orange) };
+				final int itemsbeforecolors = 2;
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setTitle(R.string.pickacolor);
+				final TripPlan tp = ((TripPlan) v.getTag());
+				builder.setItems(items, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int item) {
+						if (item >= itemsbeforecolors) {
+							tp.userColor = item - itemsbeforecolors;
+							app.database.updateColor(tp);
+							refreshView(false);
+						}
+						if (item == 0) {
+							app.database.removeTripPlan(tp);
+							app.refreshTrips();
+							refreshView(true);
+						}
+						if (item == 1) {
+							OpenJourneySelector(tp.getReverse());
+						}
+					}
+				});
+				AlertDialog alert = builder.create();
+				alert.show();
 			}
-		});
-		AlertDialog alert = builder.create();
-		alert.show();
+		}
 		return true;
 	}
 

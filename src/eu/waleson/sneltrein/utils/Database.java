@@ -33,8 +33,6 @@ public class Database {
 
 	STApplication app;
 
-	/** Called when the activity is first created. */
-
 	public Database(Context context, STApplication app) {
 		this.app = app;
 		sampleDB = null;
@@ -52,7 +50,7 @@ public class Database {
 		}
 	}
 
-	public void CloseDB() {
+	public void closeDB() {
 		if (sampleDB != null) {
 			sampleDB.close();
 		}
@@ -123,7 +121,7 @@ public class Database {
 		return result;
 	}
 
-	public void AddStationHit(Station s) {
+	public void addStationHit(Station s) {
 		if (!s.hasCode())
 			return;
 
@@ -145,7 +143,7 @@ public class Database {
 		app.database.refreshStations(app.sortStationsByUsage);
 	}
 
-	public void AddTripHit(TripPlan t) {
+	public void addTripHit(TripPlan t) {
 		if (!t.hasCodes())
 			return;
 
@@ -153,7 +151,7 @@ public class Database {
 
 		Station[] stations = t.getStations();
 		for (Station s : stations)
-			AddStationHit(s);
+			addStationHit(s);
 
 		Cursor c = sampleDB.rawQuery("SELECT S1Name FROM " + TRIPS_TABLE_NAME
 				+ " WHERE " + t.getDBClause() + ";", null);
@@ -173,14 +171,18 @@ public class Database {
 		app.refreshTrips();
 	}
 
-	public void UpdateColor(TripPlan t) {
+	public void updateColor(TripPlan t) {
 		sampleDB.execSQL("UPDATE " + TRIPS_TABLE_NAME + " SET UserColor = '"
 				+ t.userColor + "' WHERE " + t.getDBClause() + ";");
 	}
 
-	public void Remove(TripPlan t) {
+	public void removeTripPlan(TripPlan t) {
 		sampleDB.execSQL("DELETE FROM " + TRIPS_TABLE_NAME + " WHERE "
 				+ t.getDBClause() + ";");
+	}
+	public void removeStation(Station s) {
+		sampleDB.execSQL("DELETE FROM " + STATIONS_TABLE_NAME + " WHERE Code = '"
+				+ s.code + "';");
 	}
 
 	public String strLim(String s, int i) {
@@ -490,6 +492,7 @@ public class Database {
 
 	public ArrayList<Station> getAllStations() {
 		ArrayList<Station> result = new ArrayList<Station>();
+		// These stations are duplicates, please use the originals...
 		String s = "SELECT code, name FROM StationsFull WHERE name NOT IN ('Almere', 'Amsterdam', 'Alphen aan den Rijn', 'Bunde', 'Bonen', 'Dulmen', 'Ludinghausen', 'Lunen', 'Munster', 'De Eschmarke', 'Eschmarke', 'Dusseldorf', 'Koln', 'Den Haag', 'Duren', 'Dulken', 'Koln', 'Leiden', 'Monchengladbach', 'Gunzburg', 'Munchen', 'Otztal', 'Rotterdam', 'Goppingen', 'Utrecht', 'Worgl', 'Zurich') ORDER BY code ASC";
 		Cursor c = sampleDB.rawQuery(s, null);
 		while (c.moveToNext()) {
