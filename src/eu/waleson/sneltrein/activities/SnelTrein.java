@@ -102,20 +102,16 @@ public class SnelTrein extends Activity implements OnClickListener,
 				tripLinearLayout = R.id.LinearLayoutTrips;
 				stationLinearLayout = R.id.LinearLayoutStations;
 				((TextView) findViewById(R.id.TextViewMyTrips))
-						.setText(getText(R.string.my_trips) + " ("
-								+ app.numberOfTrips + ")");
+						.setText(R.string.my_trips);
 				((TextView) findViewById(R.id.TextViewMyStations))
-						.setText(getText(R.string.my_stations) + " ("
-								+ app.numberOfStations + ")");
+						.setText(R.string.my_stations);
 			} else {
 				tripLinearLayout = R.id.LinearLayoutStations;
 				stationLinearLayout = R.id.LinearLayoutTrips;
 				((TextView) findViewById(R.id.TextViewMyStations))
-						.setText(getText(R.string.my_trips) + " ("
-								+ app.numberOfTrips + ")");
+						.setText(R.string.my_trips);
 				((TextView) findViewById(R.id.TextViewMyTrips))
-						.setText(getText(R.string.my_stations) + " ("
-								+ app.numberOfStations + ")");
+						.setText(R.string.my_stations);
 			}
 
 			((LinearLayout) findViewById(stationLinearLayout)).removeAllViews();
