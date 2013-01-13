@@ -12,8 +12,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-
-import eu.waleson.sneltrein.activities.StationSelector;
 import eu.waleson.sneltrein.cornerstones.CDate;
 import eu.waleson.sneltrein.cornerstones.Station;
 import eu.waleson.sneltrein.cornerstones.TripPlan;
@@ -27,6 +25,8 @@ public class STApplication extends Application implements
 	public ArrayList<TripPlan> myTrips;
 	public ArrayList<Station> nearStations;
 	public ArrayList<Station> myStationsAndNearStations;
+	
+	public ArrayList<Station> allStations;
 
 	public int numberOfStations = 10;
 	public int numberOfTrips = 10;
@@ -63,6 +63,7 @@ public class STApplication extends Application implements
 		myStationsAndNearStations = new ArrayList<Station>();
 		database = new Database(getApplicationContext(), this);
 		database.refreshStations(sortStationsByUsage);
+		allStations = database.getAllStations();
 		refreshTrips();
 
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -159,19 +160,19 @@ public class STApplication extends Application implements
 
 	public String findStationCodeFromName(String name) {
 		name = name.trim();
-		int count = StationSelector.stationNames.length;
-		for (int i = 0; i < count; i++)
-			if (StationSelector.stationNames[i].equalsIgnoreCase(name))
-				return StationSelector.stationIds[i];
+		for (Station s : allStations) {
+			if (s.name.equalsIgnoreCase(name))
+				return s.code;
+		}
 		return "";
 	}
 
 	public String findStationNameFromCode(String code) {
 		code = code.trim();
-		int count = StationSelector.stationIds.length;
-		for (int i = 0; i < count; i++)
-			if (StationSelector.stationIds[i].equalsIgnoreCase(code))
-				return StationSelector.stationNames[i];
+		for (Station s : allStations) {
+			if (s.code.equalsIgnoreCase(code))
+				return s.name;
+		}
 		return "";
 	}
 }

@@ -14,7 +14,6 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.location.Location;
 import android.util.Log;
-
 import eu.waleson.sneltrein.R;
 import eu.waleson.sneltrein.STApplication;
 import eu.waleson.sneltrein.cornerstones.CDate;
@@ -192,7 +191,7 @@ public class Database {
 
 	private class DatabaseHelper extends SQLiteOpenHelper {
 		DatabaseHelper(Context ctx, String db_name) {
-			super(ctx, db_name, null, 12);
+			super(ctx, db_name, null, 13);
 		}
 
 		@Override
@@ -257,6 +256,10 @@ public class Database {
 				oldVersion++;
 			}
 			if (oldVersion == 11) {
+				updateLocationsFromFile(db);
+				oldVersion++;
+			}
+			if (oldVersion == 12) {
 				updateLocationsFromFile(db);
 				oldVersion++;
 			}
@@ -480,6 +483,18 @@ public class Database {
 				ts.date = CDate.parseNSTime(c.getString(5).substring(0, 20)
 						+ "00:00");
 			result.add(ts);
+		}
+		c.close();
+		return result;
+	}
+
+	public ArrayList<Station> getAllStations() {
+		ArrayList<Station> result = new ArrayList<Station>();
+		String s = "SELECT code, name FROM StationsFull ORDER BY code ASC";
+		Cursor c = sampleDB.rawQuery(s, null);
+		while (c.moveToNext()) {
+//			for (String noooo : {"Almere", "Amsterdam", "Alphen aan den Rijn", "Bunde", "Bonen", "Dulmen", "Ludinghausen", "Lunen", "Munster", "De Eschmarke", "Den Haag", "Duren", "Dulken", "")
+			result.add(new Station(c.getString(0), c.getString(1)));
 		}
 		c.close();
 		return result;
