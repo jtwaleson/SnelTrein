@@ -490,10 +490,9 @@ public class Database {
 
 	public ArrayList<Station> getAllStations() {
 		ArrayList<Station> result = new ArrayList<Station>();
-		String s = "SELECT code, name FROM StationsFull ORDER BY code ASC";
+		String s = "SELECT code, name FROM StationsFull WHERE name NOT IN ('Almere', 'Amsterdam', 'Alphen aan den Rijn', 'Bunde', 'Bonen', 'Dulmen', 'Ludinghausen', 'Lunen', 'Munster', 'De Eschmarke', 'Eschmarke', 'Dusseldorf', 'Koln', 'Den Haag', 'Duren', 'Dulken', 'Koln', 'Leiden', 'Monchengladbach', 'Gunzburg', 'Munchen', 'Otztal', 'Rotterdam', 'Goppingen', 'Utrecht', 'Worgl', 'Zurich') ORDER BY code ASC";
 		Cursor c = sampleDB.rawQuery(s, null);
 		while (c.moveToNext()) {
-//			for (String noooo : {"Almere", "Amsterdam", "Alphen aan den Rijn", "Bunde", "Bonen", "Dulmen", "Ludinghausen", "Lunen", "Munster", "De Eschmarke", "Den Haag", "Duren", "Dulken", "")
 			result.add(new Station(c.getString(0), c.getString(1)));
 		}
 		c.close();
