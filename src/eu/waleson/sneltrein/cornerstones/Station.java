@@ -1,5 +1,7 @@
 package eu.waleson.sneltrein.cornerstones;
 
+import java.text.Normalizer;
+
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,13 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import eu.waleson.sneltrein.R;
 import eu.waleson.sneltrein.utils.IViewable;
 
 public class Station implements IViewable, Comparable<Station> {
 	public String code = "";
 	public String name = "";
+	public final String normalizedName;
 	public int hits = 0;
 	public double distance = 0;
 	public int special = 0;
@@ -21,6 +23,7 @@ public class Station implements IViewable, Comparable<Station> {
 	public Station(String aCode, String aName) {
 		code = aCode;
 		name = aName;
+		normalizedName = " " + Normalizer.normalize(name.toLowerCase(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 	}
 	@Override
 	public View getView(LayoutInflater inflater, int number) {
@@ -68,6 +71,7 @@ public class Station implements IViewable, Comparable<Station> {
 		this.name = c.getString(0);
 		this.code = c.getString(1);
 		this.hits = c.getInt(2);
+		normalizedName = " " + Normalizer.normalize(name.toLowerCase(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 	}
 	public boolean hasCode() {
 		return code.length() > 0;
@@ -81,10 +85,12 @@ public class Station implements IViewable, Comparable<Station> {
 	public Station(Bundle b) {
 		name = b.getString("stationName");
 		code = b.getString("stationCode");
+		normalizedName = " " + Normalizer.normalize(name.toLowerCase(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 	}
 	public Station(Bundle b, int i) {
 		name = b.getString("stationName"+i);
 		code = b.getString("stationCode"+i);
+		normalizedName = " " + Normalizer.normalize(name.toLowerCase(), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 	}
 	public void addToBundle(Bundle bu, int i) {
 		bu.putString("stationCode"+i, code);
